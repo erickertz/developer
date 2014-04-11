@@ -1,0 +1,21 @@
+<html ng-app="app">
+<head>
+    <link rel="stylesheet" href="<%= grunt.config.get('pkg.name') %>.css"/>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="<%= grunt.config.get('pkg.name') %>.js"></script>
+</head>
+<body ng-controller="AppCtrl" style="margin: auto 2em ;">
+    <h1>Angular app</h1>
+
+    <h2>{{greeting}}</h2>
+
+    <div>
+        <p>Enter your name for a custom 'hello'</p>
+        <input id="name" type="text" ng-model="name" placeholder="name"/>
+        <input type="submit" ng-click="submitClicked()"/>
+    </div>
+
+</body>
+</html>
+

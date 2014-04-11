@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.urbn'
+version = '0.0.1-SNAPSHOT'
+
+description = """Spring REST service"""
+
+repositories {
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
