@@ -16,6 +16,16 @@
         <input type="submit" ng-click="submitClicked()"/>
     </div>
 
+     <div>
+        <p>Convert a number into a Roman Numeral</p>
+        <input id="romanNumeral" type="generic" ng-model="number" placeholder="Enter a numeric number"/>
+        <input type="submit" ng-click="getRomanNumeral()"/>
+    </div>
+    
+    <div>
+        <p> Your Roman Numeral is: {{romanNumeral}} </p>
+    </div>
+
 </body>
 </html>
 
