@@ -7,19 +7,11 @@ angular.module('app.services', [])
         var config = {};
         if (name) { config.params = { 'name' : name }; }
         return $http.get(apiEndpoint + '/greeting', config);
-    },
-	converter = function(number){
-	var config = {};
-        if (number) { 
-            config.params = { 'number' : number }; 
-        }
-        return $http.get(apiEndpoint + '/convert');
     };
     
     // public API
     return {
-        greeting : greeting,
-        converter : converter
+        greeting : greeting
         
     };
 } ]);
