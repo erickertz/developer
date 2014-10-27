@@ -2,7 +2,7 @@ package com.urbn.interviewtest;
 
 public class RomanNumeralConverter {
 
-	public String RomanNumeralConverter(int NUMBER) {
+	private String RomanNumeralConverter(int NUMBER) {
 		String returnVal = "";
 		while(NUMBER > 0) {
 			if(NUMBER >= 1000) { returnVal += "M"; NUMBER -= 1000; continue; }
@@ -22,41 +22,37 @@ public class RomanNumeralConverter {
 		return returnVal;
 	}
 	
-	public boolean RomanNumeralValidator(int NUMBER) {
+	private boolean RomanNumeralValidator(int NUMBER) {
 		boolean returnVal = false;
 		if(NUMBER > 0 && NUMBER < 4999){
 			returnVal = true;
 		}
 		return returnVal;
 	}
+	
+	private String RomanNumeralProcessor(int NUMBER) {
+		String returnVal = "";
+		if(this.RomanNumeralValidator(NUMBER)){
+			String solution = this.RomanNumeralConverter(NUMBER);
+			returnVal =  "The roman numeral value of " + NUMBER + " is: " + solution;	
+		} else {
+			returnVal = "Number must be in the range of 1 - 4999";	
+		}
+		return returnVal;
+	}
 
 	public void problemOne() {
 		final int NUMBER = 56;
-		if(this.RomanNumeralValidator(NUMBER)){
-			String solution = this.RomanNumeralConverter(NUMBER);
-			System.out.println("The roman numeral value of " + NUMBER + " is: " + solution);	
-		} else {
-			System.out.println("Number must be in the range of 1 - 4999");	
-		}
+		System.out.println(this.RomanNumeralProcessor(NUMBER));
 	}
 
 	public void problemTwo() {
 		final int NUMBER = 763;
-		if(this.RomanNumeralValidator(NUMBER)){
-			String solution = this.RomanNumeralConverter(NUMBER);
-			System.out.println("The roman numeral value of " + NUMBER + " is: " + solution);	
-		} else {
-			System.out.println("Number must be in the range of 1 - 4999");	
-		}
+		System.out.println(this.RomanNumeralProcessor(NUMBER));
 	}
 
 	public void problemThree() {
 		final int NUMBER = 3195;
-		if(this.RomanNumeralValidator(NUMBER)){
-			String solution = this.RomanNumeralConverter(NUMBER);
-			System.out.println("The roman numeral value of " + NUMBER + " is: " + solution);	
-		} else {
-			System.out.println("Number must be in the range of 1 - 4999");	
-		}
+		System.out.println(this.RomanNumeralProcessor(NUMBER));
 	}
 }
