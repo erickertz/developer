@@ -16,6 +16,16 @@
         <input type="submit" ng-click="submitClicked()"/>
     </div>
 
+     <div>
+        <p>Enter a number between 1 - 4999 to convert to a roman numeral</p>
+        <input id="number" type="number" ng-model="number" placeholder="number" min="1" max="4999"/>
+        <input type="submit" ng-click="submitClickedNumber()"/>
+    </div>
+    
+    <div>
+        <p>converted roman numeral: {{numeral}}</p>
+    </div>
+
 </body>
 </html>
 
